@@ -15,11 +15,17 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Great+Vibes&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Great+Vibes&family=Roboto&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <button id="toggle-dark-mode">Toggle Dark Mode</button>
+    
+    <marquee behavior="" direction="right">
+    <h1 style="text-transform: capitalize;color: rgb(9, 71, 63);text-decoration: underline;font-size: 3vw;">generate resume</h1>
+
+    </marquee>
 
     <div class="form-container">
         <form id="resume-form">
@@ -45,10 +51,12 @@
             <input type="url" id="contact-github" name="contact-github" required placeholder="Enter your GitHub URL">
 
             <label for="contact-linkedin">LinkedIn URL:</label>
-            <input type="url" id="contact-linkedin" name="contact-linkedin" required placeholder="Enter your LinkedIn URL">
+            <input type="url" id="contact-linkedin" name="contact-linkedin" required
+                placeholder="Enter your LinkedIn URL">
 
             <label for="contact-whatsapp">WhatsApp URL:</label>
-            <input type="url" id="contact-whatsapp" name="contact-whatsapp" required placeholder="Enter your WhatsApp URL">
+            <input type="url" id="contact-whatsapp" name="contact-whatsapp" required
+                placeholder="Enter your WhatsApp URL">
 
             <label for="contact-twitter">Twitter URL:</label>
             <input type="url" id="contact-twitter" name="contact-twitter" required placeholder="Enter your Twitter URL">
@@ -59,7 +67,8 @@
                 <div class="education-entry">
                     <label for="institute-one">Education (1):</label>
                     <input type="text" class="education-institute" id="institute-one" placeholder="Institute" required>
-                    <input type="text" class="education-degree" id="degree-one" placeholder="Degree/Certificate" required>
+                    <input type="text" class="education-degree" id="degree-one" placeholder="Degree/Certificate"
+                        required>
                     <input type="text" class="education-duration" id="duration-one" placeholder="Duration" required>
                 </div>
                 <div class="education-entry">
@@ -137,4 +146,3 @@
 </body>
 
 </html>
-
