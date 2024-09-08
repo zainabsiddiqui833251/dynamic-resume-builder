@@ -19,7 +19,8 @@ body {
 }
 
 /* Button Styles */
-button {
+button,
+.button {
     background-color: #339989;
     color: #fff;
     border: none;
@@ -28,9 +29,11 @@ button {
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s;
+    margin: 1%;
+   
 }
 
-button:hover {
+button:hover , .button:hover {
     background-color: #2b2c28;
 }
 
@@ -72,6 +75,7 @@ textarea {
 textarea {
     resize: vertical;
     height: 100px;
+    margin-top: 1%;
 }
 
 input[type="text"]:focus,
@@ -143,4 +147,7 @@ textarea:focus {
 }
 .resume-container i{
     font-size: 1.6vw;
+}
+#resume-url{
+    margin-top: 3%;
 }
