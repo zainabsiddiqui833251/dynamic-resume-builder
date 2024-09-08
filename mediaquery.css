@@ -1,0 +1,47 @@
+@media (max-width: 650px) {
+    .resume-layout{
+        width: 95%;
+    }
+    .resume-layout p{
+        font-size: 3vw;
+    }
+    .resume-layout header .name h1{
+        font-size: 5.1vw;
+        
+    }
+    .resume-layout header .name h2{
+        font-size: 4vw;      
+    }
+    .resume-layout h2{
+        font-size: 7vw;  
+        margin: 1%;     
+    }
+    .container{
+        display: block;
+        width: 95%;
+    }
+    .heading,.info{
+        width: 90%;
+        margin: auto;
+    }
+    ul li i{
+        font-size: 5vw;
+        
+    }
+    .skills .left ul li,
+    .skills .right ul li{
+        font-size: 3vw;
+        
+    }
+    .resume-layout h3{
+        font-size: 4vw;  
+    }
+    .resume-layout h4{
+        font-size: 4vw;  
+    }
+    .resume-layout .skills #toggle-button{
+        font-size: 4vw;
+        padding: 1%;
+        border-radius: 6px;
+    }
+}

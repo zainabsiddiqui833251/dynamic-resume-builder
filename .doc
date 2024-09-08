@@ -1,0 +1,101 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('resume-form') as HTMLFormElement;
+    const resumeContainer = document.getElementById('resume') as HTMLDivElement;
+    const downloadButton = document.getElementById('download-resume') as HTMLAnchorElement;
+    
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const resumeData = gatherFormData();
+        generateResume(resumeData, resumeContainer);
+    });
+
+    // When the user clicks the download button, create a PDF
+    downloadButton.addEventListener('click', () => {
+        generatePDF(resumeContainer);
+    });
+
+    enableResumeEditing(resumeContainer);
+    enableDarkModeToggle();
+});
+
+// Function to gather form data (same as before)
+function gatherFormData(): Data {
+    // Same as your current implementation
+}
+
+// Function to generate the resume (same as before)
+function generateResume(data: Data, resumeContainer: HTMLDivElement) {
+    resumeContainer.innerHTML = `
+        <div class="resume-header">
+            <img src="${data.profilePic}" alt="Profile Picture">
+            <h1>${data.name}</h1>
+            <h2>${data.title}</h2>
+        </div>
+        <section class="about">
+            <h3>About Me</h3>
+            <p>${data.about}</p>
+        </section>
+        <section class="contact">
+            <h3>Contact</h3>
+            <p><i class="fas fa-phone"></i> ${data.contact.phone}</p>
+            <p><i class="fab fa-github"></i> <a href="${data.contact.github}" target="_blank">${data.contact.github}</a></p>
+            <p><i class="fab fa-linkedin"></i> <a href="${data.contact.linkedin}" target="_blank">${data.contact.linkedin}</a></p>
+            <p><i class="fab fa-whatsapp"></i> <a href="${data.contact.whatsapp}" target="_blank">${data.contact.whatsapp}</a></p>
+            <p><i class="fab fa-twitter"></i> <a href="${data.contact.twitter}" target="_blank">${data.contact.twitter}</a></p>
+        </section>
+        <section class="education">
+            <h3>Education</h3>
+${data.education.map((edu: Education) => `<p>${edu.institute} - ${edu.degree} (${edu.duration})</p>`).join('')}
+        </section>
+        <section class="skills">
+            <h3>Skills</h3>
+            <ul>
+${data.skills.map((skill: string) => `<li>${skill}</li>`).join('')}
+            </ul>
+        </section>
+        <section class="courses">
+            <h3>Courses</h3>
+${data.courses.map((course: Course) => `<p>${course.institute} - ${course.title} (${course.duration})</p>`).join('')}
+        </section>
+        <section class="experience">
+            <h3>Experience</h3>
+            <p>${data.experience.companyName} - ${data.experience.jobTitle} (${data.experience.yearsWorking})</p>
+            <p>${data.experience.description}</p>
+        </section>
+    `;
+}
+
+// Function to generate the PDF from the resume content
+function generatePDF(resumeContainer: HTMLDivElement) {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // Get the HTML content from the resume container
+    const resumeHTML = resumeContainer.innerHTML;
+
+    // Add content to PDF (using text or html from the container)
+    doc.html(resumeHTML, {
+        callback: function (doc) {
+            // Save the PDF once content is added
+            doc.save("resume.pdf");
+        },
+        x: 10,
+        y: 10
+    });
+}
+Function to enable editing of resume content
+function enableResumeEditing(resumeContainer: HTMLDivElement) {
+    resumeContainer.contentEditable = 'true';
+}
+
+// Function to enable dark mode toggle
+function enableDarkModeToggle() {
+    const toggleDarkModeButton = document.getElementById('toggle-dark-mode');
+
+    if (toggleDarkModeButton) {
+        toggleDarkModeButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    }
+}

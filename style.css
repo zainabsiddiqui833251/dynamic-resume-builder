@@ -1,0 +1,146 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+#resume{
+    background-color: white;
+    color: black;
+    font-size: 1.5vw;
+}
+.dark-mode {
+    background-color: #333;
+    color: black;
+}
+
+/* Button Styles */
+button {
+    background-color: #339989;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2b2c28;
+}
+
+/* Form Container Styles */
+.form-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #2b2c28;
+}
+
+/* Form Field Styles */
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="url"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+input[type="text"]:focus,
+input[type="url"]:focus,
+textarea:focus {
+    border-color: #339989;
+    outline: none;
+}
+
+/* Resume Container Styles */
+.resume-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resume-layout {
+    text-align: center;
+}
+
+.resume-layout img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.resume-layout h2 {
+    margin: 10px 0;
+    font-size: 1.4vw;
+}
+
+.resume-layout h3 {
+    margin: 5px 0;
+    font-size: 1.6vw;
+    color: #339989;
+}
+
+.resume-layout p {
+    font-size: 1.3vw;
+    line-height: 1.6;
+}
+
+.resume-layout h4 {
+    margin-top: 20px;
+    font-size: 1.5vw;
+    color: #2b2c28;
+}
+
+.resume-layout ul {
+    list-style: none;
+    padding: 0;
+}
+
+.resume-layout li {
+    margin: 5px 0;
+}
+
+.resume-layout a {
+    color: #339989;
+    text-decoration: none;
+}
+
+.resume-layout a:hover {
+    text-decoration: underline;
+}
+.resume-container i{
+    font-size: 1.6vw;
+}

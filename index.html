@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaquery.css">
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- AOS CSS Link -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Great+Vibes&family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <button id="toggle-dark-mode">Toggle Dark Mode</button>
+
+    <div class="form-container">
+        <form id="resume-form">
+            <h2>Resume Generator</h2>
+
+            <!-- Form Fields -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your name">
+
+            <label for="title">Job Title:</label>
+            <input type="text" id="title" name="title" required placeholder="Enter your job title">
+
+            <label for="profile-pic">Profile Picture URL:</label>
+            <input type="text" id="profile-pic" name="profile-pic" required placeholder="Enter profile picture URL">
+
+            <label for="about">About:</label>
+            <textarea id="about" name="about" required placeholder="Write about yourself"></textarea>
+
+            <label for="contact-phone">Contact Phone:</label>
+            <input type="text" id="contact-phone" name="contact-phone" required placeholder="Enter your phone number">
+
+            <label for="contact-github">GitHub URL:</label>
+            <input type="url" id="contact-github" name="contact-github" required placeholder="Enter your GitHub URL">
+
+            <label for="contact-linkedin">LinkedIn URL:</label>
+            <input type="url" id="contact-linkedin" name="contact-linkedin" required placeholder="Enter your LinkedIn URL">
+
+            <label for="contact-whatsapp">WhatsApp URL:</label>
+            <input type="url" id="contact-whatsapp" name="contact-whatsapp" required placeholder="Enter your WhatsApp URL">
+
+            <label for="contact-twitter">Twitter URL:</label>
+            <input type="url" id="contact-twitter" name="contact-twitter" required placeholder="Enter your Twitter URL">
+
+            <!-- Education Fields -->
+            <fieldset>
+                <legend>Education</legend>
+                <div class="education-entry">
+                    <label for="institute-one">Education (1):</label>
+                    <input type="text" class="education-institute" id="institute-one" placeholder="Institute" required>
+                    <input type="text" class="education-degree" id="degree-one" placeholder="Degree/Certificate" required>
+                    <input type="text" class="education-duration" id="duration-one" placeholder="Duration" required>
+                </div>
+                <div class="education-entry">
+                    <label for="institute-two">Education (2):</label>
+                    <input type="text" class="education-institute" id="institute-two" placeholder="Institute">
+                    <input type="text" class="education-degree" id="degree-two" placeholder="Degree/Certificate">
+                    <input type="text" class="education-duration" id="duration-two" placeholder="Duration">
+                </div>
+            </fieldset>
+
+            <!-- Skills -->
+            <fieldset>
+                <legend>Skills</legend>
+                <input type="text" class="skill" id="skill1" placeholder="Skill 1">
+                <input type="text" class="skill" id="skill2" placeholder="Skill 2">
+                <input type="text" class="skill" id="skill3" placeholder="Skill 3">
+                <input type="text" class="skill" id="skill4" placeholder="Skill 4">
+                <input type="text" class="skill" id="skill5" placeholder="Skill 5">
+                <input type="text" class="skill" id="skill6" placeholder="Skill 6">
+                <input type="text" class="skill" id="skill7" placeholder="Skill 7">
+                <input type="text" class="skill" id="skill8" placeholder="Skill 8">
+            </fieldset>
+
+            <!-- Courses -->
+            <fieldset>
+                <legend>Courses</legend>
+                <div class="course-entry">
+                    <label for="course-institute1">Course (1):</label>
+                    <input type="text" class="course-institute" id="course-institute1" placeholder="Institute" required>
+                    <input type="text" class="course-title" id="course-degree1" placeholder="Title" required>
+                    <input type="text" class="course-duration" id="course-duration1" placeholder="Duration" required>
+                </div>
+                <div class="course-entry">
+                    <label for="course-institute2">Course (2):</label>
+                    <input type="text" class="course-institute" id="course-institute2" placeholder="Institute">
+                    <input type="text" class="course-title" id="course-degree2" placeholder="Title">
+                    <input type="text" class="course-duration" id="course-duration2" placeholder="Duration">
+                </div>
+            </fieldset>
+
+            <!-- Experience -->
+            <fieldset>
+                <legend>Experience</legend>
+                <div class="experience-entry">
+                    <input type="text" class="experience-company-name" id="company-name" placeholder="Company Name">
+                    <input type="text" class="experience-job-title" id="job-title" placeholder="Job Title">
+                    <input type="text" class="experience-years-working" id="years-working" placeholder="Years Working">
+                    <input type="text" class="experience-description" id="description" placeholder="Description">
+                </div>
+            </fieldset>
+
+            <button type="submit">Generate Resume</button>
+        </form>
+    </div>
+
+    <div class="resume-container">
+        <div id="resume" class="resume-layout">
+            <!-- Resume content will be injected here -->
+        </div>
+        <a id="download-resume" class="button" download="resume.html">Download Resume</a>
+        <textarea id="resume-url" readonly></textarea>
+    </div>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 300,
+            duration: 300,
+            easing: 'ease-in-out',
+        });
+    </script>
+    <!-- TypeScript -->
+    <script type="module" src="./dist/app.js"></script>
+</body>
+
+</html>
+
